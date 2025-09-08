@@ -31,6 +31,7 @@ export default {
   hideToTray: false,
   doHURL: 'https://cloudflare-dns.com/dns-query',
   disableSubtitleBlur: SUPPORTS.isAndroid,
+	useDiscordRPC: false,
   showDetailsInRPC: true,
   torrentPath: '',
   angle: 'default' as 'default' | 'd3d11'| 'd3d9' | 'warp' | 'gl' | 'gles' | 'swiftshader' | 'vulkan' | 'metal',

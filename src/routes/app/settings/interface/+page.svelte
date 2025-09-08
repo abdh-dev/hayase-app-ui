@@ -38,9 +38,12 @@
 
 <div class='space-y-3 pb-10 lg:max-w-4xl'>
   {#if !SUPPORTS.isAndroid}
-    <div class='font-weight-bold text-xl font-bold'>Rich Pressence Settings</div>
+    <div class='font-weight-bold text-xl font-bold'>Rich Presence Settings</div>
+	  <SettingCard let:id title='Use Discord Rich Presence' description='Shows details about Hayase in Discord rich presence.'>
+		  <Switch {id} bind:checked={$settings.useDiscordRPC} />
+	  </SettingCard>
     <SettingCard let:id title='Show Details in Discord Rich Presence' description='Shows currently played anime and episode in Discord rich presence.'>
-      <Switch {id} bind:checked={$settings.showDetailsInRPC} />
+      <Switch {id} disabled={!$settings.useDiscordRPC} bind:checked={$settings.showDetailsInRPC} />
     </SettingCard>
   {/if}
   <SettingCard let:id title='CSS Variables' description='Used for custom themes. Can change colors, sizes, spacing and more. Supports only variables. Best way to discover variables is to use the built-in devtools via Ctrl+Shift+I or F12.'>
